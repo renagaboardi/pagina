@@ -126,6 +126,30 @@ footer {
   font-size: 0.85rem;
 }
 
+/* 🔽 Flechas de navegación */
+.flecha {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  color: var(--texto);
+  text-decoration: none;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: background 0.3s, transform 0.2s;
+  z-index: 1500;
+}
+
+.flecha:hover {
+  background: var(--acento);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.flecha.izquierda { left: 12px; }
+.flecha.derecha { right: 12px; }
+
 @media (max-width: 600px) {
   header {
     padding: 15px 20px 90px;
@@ -159,4 +183,58 @@ footer {
   body {
     line-height: 1.8;
   }
+
+  /* Ajuste flechas en pantallas chicas */
+  .flecha {
+    font-size: 2rem;
+    padding: 8px;
+  }
 }
+
+/* Slider */
+/* Contenedor del slider */
+.slider {
+  width: 80%;           /* ancho del slider */
+  max-width: 900px;     /* ancho máximo */
+  height: 420px;        /* altura de las diapositivas */
+  margin: 40px auto;    /* centrado horizontal y margen arriba/abajo */
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+/* Cada diapositiva */
+.slide {
+  width: 100%;
+  height: 100%;
+  display: none;        /* por defecto ocultas */
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Diapositiva activa */
+.slide.active {
+  display: block;
+}
+
+/* Flechas */
+.flecha.izquierda,
+.flecha.derecha {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+}
+
+.flecha.izquierda { left: 10px; }
+.flecha.derecha { right: 10px; }
